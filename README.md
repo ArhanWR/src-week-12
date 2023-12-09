@@ -70,3 +70,10 @@ Future calculate() async {
 }
 Metode ini adalah contoh penggunaan Completer. Di dalam metode calculate, terdapat penundaan selama 5 detik menggunakan Future.delayed untuk mensimulasikan suatu operasi yang memakan waktu. Setelah penundaan selesai, metode memanggil completer.complete(42), yang berarti Future yang terkait dengan completer sekarang dianggap telah selesai dengan nilai 42.
 
+Langkah 5 - 6 terdapat pada GIF
+
+![Hasil](images/praktikum_3b.gif)
+
+Soal 6
+Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
+- perbedaan antara langkah 2 dan langkah 5-6 terletak pada penanganan kesalahan. Pada langkah 2, tidak ada penanganan kesalahan yang diimplementasikan, sementara pada langkah 5-6, metode calculate mencoba menangani kesalahan dengan menggunakan blok try dan catch, dan di langkah 6, hasil dari getNumber() ditangani dengan menggunakan catchError untuk memberikan umpan balik jika terjadi kesalahan. Ini memungkinkan aplikasi untuk merespons lebih baik terhadap kondisi kesalahan selama operasi asinkron.
