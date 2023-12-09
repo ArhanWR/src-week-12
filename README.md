@@ -87,3 +87,10 @@ Langkah 1 - 3 terdapat pada GIF
 Soal 8
 Jelaskan maksud perbedaan kode langkah 1 dan 4!
 - Perbedaan utama adalah bahwa di langkah 1, menggunakan FutureGroup untuk mengelola future secara eksplisit, sementara di langkah 4, menggunakan Future.wait untuk menunggu sekelompok future tanpa perlu mengelola mereka secara terpisah. Pemakaian Future.wait dapat membuat kode lebih ringkas dan mudah dipahami dalam beberapa kasus.
+
+## Praktikum 5: Menangani Respon Error pada Async Code
+
+Langkah 1 - 3 terdapat pada GIF
+
+![Hasil](images/praktikum_5.gif)
+
