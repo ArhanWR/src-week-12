@@ -77,3 +77,13 @@ Langkah 5 - 6 terdapat pada GIF
 Soal 6
 Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
 - perbedaan antara langkah 2 dan langkah 5-6 terletak pada penanganan kesalahan. Pada langkah 2, tidak ada penanganan kesalahan yang diimplementasikan, sementara pada langkah 5-6, metode calculate mencoba menangani kesalahan dengan menggunakan blok try dan catch, dan di langkah 6, hasil dari getNumber() ditangani dengan menggunakan catchError untuk memberikan umpan balik jika terjadi kesalahan. Ini memungkinkan aplikasi untuk merespons lebih baik terhadap kondisi kesalahan selama operasi asinkron.
+
+## Praktikum 4: Memanggil Future secara paralel
+
+Langkah 1 - 3 terdapat pada GIF
+
+![Hasil](images/praktikum_4.gif)
+
+Soal 8
+Jelaskan maksud perbedaan kode langkah 1 dan 4!
+- Perbedaan utama adalah bahwa di langkah 1, menggunakan FutureGroup untuk mengelola future secara eksplisit, sementara di langkah 4, menggunakan Future.wait untuk menunggu sekelompok future tanpa perlu mengelola mereka secara terpisah. Pemakaian Future.wait dapat membuat kode lebih ringkas dan mudah dipahami dalam beberapa kasus.
