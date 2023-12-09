@@ -43,3 +43,30 @@ Setelah itu, nilai total diubah menjadi string dan disimpan dalam variabel resul
 
 Dengan cara ini, menggambarkan penggunaan fungsi asinkron dan penggunaan await untuk menangani tugas yang memerlukan waktu dalam lingkungan Flutter.
 
+## Praktikum 3: Menggunakan Completer di Future
+
+Langkah 1 - 4 terdapat pada GIF
+
+![Hasil](images/praktikum_3a.gif)
+
+Soal 5
+Jelaskan maksud kode langkah 2 tersebut!
+- Variabel completer:
+late Completer completer;
+Mendeklarasikan variabel completer dengan tipe Completer. Variabel ini digunakan untuk mengontrol suatu objek Future secara manual. Completer dapat digunakan untuk menyelesaikan atau membatalkan suatu Future secara ekspisit.
+
+- Metode getNumber:
+Future getNumber() {
+  completer = Completer<int>();
+  calculate();
+  return completer.future;
+}
+Metode ini membuat sebuah objek Completer baru dan menyimpannya dalam variabel completer. Selanjutnya, metode calculate dipanggil. Kemudian, metode mengembalikan completer.future. Ini berarti, saat metode ini dipanggil, Future yang akan diselesaikan oleh completer akan dikembalikan, sehingga pemanggil metode dapat menggunakan await untuk menunggu hasil dari completer.future.
+
+- Metode calculate:
+Future calculate() async {
+  await Future.delayed(const Duration(seconds : 5));
+  completer.complete(42);
+}
+Metode ini adalah contoh penggunaan Completer. Di dalam metode calculate, terdapat penundaan selama 5 detik menggunakan Future.delayed untuk mensimulasikan suatu operasi yang memakan waktu. Setelah penundaan selesai, metode memanggil completer.complete(42), yang berarti Future yang terkait dengan completer sekarang dianggap telah selesai dengan nilai 42.
+
