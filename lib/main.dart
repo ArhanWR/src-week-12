@@ -32,6 +32,7 @@ class FuturePage extends StatefulWidget {
   State<FuturePage> createState() => _FuturePageState();
 }
 
+// PRAKTIKUM 1
 class _FuturePageState extends State<FuturePage> {
   String result = '';
   Future<Response> getData() async {
@@ -41,6 +42,7 @@ class _FuturePageState extends State<FuturePage> {
     return http.get(url);
   }
 
+  //PRAKTIKUM 2
   Future<int> returnOneAsync() async {
   await Future.delayed(const Duration(seconds: 3));
   return 1;
@@ -66,6 +68,7 @@ class _FuturePageState extends State<FuturePage> {
     });
   }
 
+  // Praktikum 3
   late Completer completer;
 
   Future getNumber() {
@@ -84,6 +87,7 @@ class _FuturePageState extends State<FuturePage> {
     }
   }
 
+  // Praktikum 4
   void returnFG() {
     final futures = Future.wait<int>([
       returnOneAsync(),
@@ -106,6 +110,26 @@ class _FuturePageState extends State<FuturePage> {
     });
   }
 
+  // Praktikum 5
+  Future returnError() async {
+    await Future.delayed(const Duration(seconds: 2));
+    throw Exception('Something terrible happened!');
+  }
+
+  Future handleError() async {
+    try {
+      await returnError();
+    }
+    catch (error) {
+      setState(() {
+        result = error.toString();
+      });
+    }
+    finally {
+      print('Complete');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,9 +142,21 @@ class _FuturePageState extends State<FuturePage> {
           ElevatedButton(
             child: const Text('GO!'),
             onPressed: () {
-              returnFG();
+              handleError();
+              //returnError()
+              //    .then((value) {
+              //      setState(() {
+              //        result = 'Success';
+              //      });
+              //    }).catchError((onError){
+              //      setState(() {
+              //        result = onError.toString();
+              //      });
+              //    }).whenComplete(() => print('Complete'));
 
-              //getNumber().then((value) {           praktikum_3
+              //returnFG();      praktikum 4
+
+              //getNumber().then((value) {     praktikum_3
               //  setState(() {
               //    result = value.toString();
               //  });

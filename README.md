@@ -94,3 +94,10 @@ Langkah 1 - 3 terdapat pada GIF
 
 ![Hasil](images/praktikum_5.gif)
 
+Soal 10
+Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
+- Hasilnya masih sama dengan yang sebelumnya.
+- Perbedaan utamanya adalah Langkah 1 hanya mendefinisikan metode yang melempar pengecualian, sementara langkah 4 menciptakan metode handleError() yang memanggil metode yang mungkin melempar pengecualian dan menangani pengecualian tersebut. Langkah 4 menunjukkan pendekatan penggunaan try, catch, dan finally untuk menangani kesalahan secara eksplisit. Dengan menggunakan try, catch, dan finally, dapat mengontrol alur eksekusi dan melakukan tindakan tertentu saat terjadi kesalahan atau setelah blok try selesai dieksekusi.
+
+## Praktikum 6: Menggunakan Future dengan StatefulWidget
+
