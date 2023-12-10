@@ -101,3 +101,31 @@ Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya?
 
 ## Praktikum 6: Menggunakan Future dengan StatefulWidget
 
+Langkah 1 - 8 terdapat pada GIF
+
+![Hasil](images/praktikum_6.gif)
+
+Soal 12
+1. Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));
+- Terdapat animasi loading yang tampil tanpa menambahkan delay pada method getPosition() tersebut.
+
+2. Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+- Iya, saya mendapatkan koordinat GPS ketika di-run. Karena: 
+  - Permission Handling:
+await Geolocator.requestPermission();
+Menggunakan Geolocator.requestPermission() untuk meminta izin lokasi. Tanpa izin yang benar, aplikasi mungkin tidak dapat mengakses data lokasi perangkat.
+  - Location Service Check:
+await Geolocator.isLocationServiceEnabled();
+Menggunakan Geolocator.isLocationServiceEnabled() untuk memastikan bahwa layanan lokasi diaktifkan pada perangkat. Jika layanan ini dimatikan, maka permintaan lokasi tidak akan berhasil.
+  - Mendapatkan Lokasi:
+Position? position = await Geolocator.getCurrentPosition();
+Menggunakan Geolocator.getCurrentPosition() untuk mendapatkan posisi saat ini. Metode ini mengembalikan objek Position yang berisi informasi tentang lokasi geografis, seperti latitude dan longitude.
+  - Update State:
+setState(() {
+  myPosition = myPosition;
+});
+Setelah mendapatkan posisi, memperbarui state dengan menggunakan setState(). Ini memicu pembaruan tampilan, sehingga widget Text dapat menampilkan koordinat GPS yang baru diperoleh.
+
+Kombinasi dari langkah-langkah ini memastikan bahwa kode berfungsi dengan benar dan dapat menampilkan koordinat GPS saat dijalankan. Kode ini mengikuti prinsip-prinsip Flutter yang baik, yaitu penggunaan Future untuk operasi asinkron (seperti mendapatkan lokasi), pembaruan state menggunakan setState untuk memicu pembaruan tampilan, dan penanganan izin dan layanan lokasi dengan benar menggunakan Geolocator.
+
+## 
