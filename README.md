@@ -144,3 +144,13 @@ Meskipun keduanya mencapai tujuan yang sama, yakni menampilkan koordinat GPS, me
 Perbedaan utama yang dapat terlihat dari UI ini terletak pada cara pengelolaan status koneksi dan cara tampilan data yang terkait diintegrasikan ke dalam widget. FutureBuilder memungkinkan menyusun kode dengan cara yang lebih ekspresif dan membantu memisahkan logika UI dari logika bisnis (dalam hal ini, logika asinkron untuk mendapatkan posisi).
 
 Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.
+
+Langkah 5 terdapat pada GIF
+
+![Hasil](images/praktikum_7b.gif)
+
+Soal 14
+Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
+- Tidak ada perbedaan sama sekali dengan langkah sebelumnya, karena tidak terjadi kesalahan. Jika operasi asinkron yang dilakukan oleh FutureBuilder (dalam hal ini, mendapatkan posisi) berhasil tanpa kesalahan, maka blok if (snapshot.hasError) tidak akan dieksekusi. Oleh karena itu, hasilnya tetap sama karena tidak ada kesalahan yang terjadi.
+
+## 
