@@ -153,4 +153,28 @@ Soal 14
 Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
 - Tidak ada perbedaan sama sekali dengan langkah sebelumnya, karena tidak terjadi kesalahan. Jika operasi asinkron yang dilakukan oleh FutureBuilder (dalam hal ini, mendapatkan posisi) berhasil tanpa kesalahan, maka blok if (snapshot.hasError) tidak akan dieksekusi. Oleh karena itu, hasilnya tetap sama karena tidak ada kesalahan yang terjadi.
 
+## Praktikum 8: Navigation route dengan Future Function
+
+Langkah 1 - 8 terdapat pada GIF
+
+![Hasil](images/praktikum_8.gif)
+
+Soal 16
+Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+- jika di kilk setiap button akan berubah sesuai dengan warna yang sudah saya atur yaitu merah, ungu, biru. Karena widget yang dijalankan dalam aplikasi Flutter. Rincian alur proses yang terjadi:
+  - Mulai Dari NavigationFirst:
+Warna awal tombol adalah biru (Colors.blue.shade700).
+Saat tombol "Change Color" ditekan, _navigateAndGetColor dijalankan.
+Pergi ke NavigationSecond melalui Navigator.push.
+  - Pada NavigationSecond:
+Terdapat tiga tombol (Red, Purple, Blue) yang masing-masing memiliki warna yang berbeda.
+Saat salah satu tombol ditekan, warna tombol tersebut diambil dan dikirim kembali ke NavigationFirst melalui Navigator.pop.
+  - Kembali ke NavigationFirst:
+Warna yang diterima dari Navigator.pop disimpan dalam variabel color.
+setState dipanggil, memicu pembaruan UI.
+Saat setState dipanggil, Flutter akan merender ulang widget dan membangun ulang pohon widget. Hal ini mungkin menyebabkan state pada NavigationFirst di-reset ke nilai awalnya (biru) karena setiap kali build dijalankan, variabel color diinisialisasi ulang.
+
+Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+- Sudah saya ganti menjadi 3 warna favorit saya yaitu merah, ungu, biru
+
 ## 
