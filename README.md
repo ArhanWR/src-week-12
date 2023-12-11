@@ -128,4 +128,19 @@ Setelah mendapatkan posisi, memperbarui state dengan menggunakan setState(). Ini
 
 Kombinasi dari langkah-langkah ini memastikan bahwa kode berfungsi dengan benar dan dapat menampilkan koordinat GPS saat dijalankan. Kode ini mengikuti prinsip-prinsip Flutter yang baik, yaitu penggunaan Future untuk operasi asinkron (seperti mendapatkan lokasi), pembaruan state menggunakan setState untuk memicu pembaruan tampilan, dan penanganan izin dan layanan lokasi dengan benar menggunakan Geolocator.
 
-## 
+## Praktikum 7: Manajemen Future dengan FutureBuilder
+
+Langkah 1 - 4 terdapat pada GIF
+
+![Hasil](images/praktikum_7a.gif)
+
+Soal 13
+Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+- Tidak ada perbedaan sama sekali dengan praktikum sebelumnya, karena beberapa kemungkinan :
+  - Data yang Sama:
+Jika data yang ditampilkan (koordinat GPS) sama antara kedua implementasi, maka UI akan tampak serupa.
+  - Cara Pembaruan UI:
+Meskipun keduanya mencapai tujuan yang sama, yakni menampilkan koordinat GPS, metode yang berbeda (menggunakan FutureBuilder dan setState) dapat memberikan struktur dan pembacaan kode yang berbeda. Namun, dari sudut pandang tampilan pengguna, ini mungkin tidak menghasilkan perbedaan yang mencolok. FutureBuilder adalah widget yang sangat berguna untuk menangani operasi asinkron seperti mendapatkan data dari Future. Dengan menggunakan FutureBuilder, dapat dengan mudah mengelola berbagai status koneksi seperti waiting, done, dan lainnya, dan memperbarui UI sesuai dengan status tersebut.
+Perbedaan utama yang dapat terlihat dari UI ini terletak pada cara pengelolaan status koneksi dan cara tampilan data yang terkait diintegrasikan ke dalam widget. FutureBuilder memungkinkan menyusun kode dengan cara yang lebih ekspresif dan membantu memisahkan logika UI dari logika bisnis (dalam hal ini, logika asinkron untuk mendapatkan posisi).
+
+Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.
