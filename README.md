@@ -177,4 +177,28 @@ Saat setState dipanggil, Flutter akan merender ulang widget dan membangun ulang 
 Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
 - Sudah saya ganti menjadi 3 warna favorit saya yaitu merah, ungu, biru
 
-## 
+## Praktikum 9: Memanfaatkan async/await dengan Widget Dialog
+
+Langkah 1 - 6 terdapat pada GIF
+
+![Hasil](images/praktikum_9.gif)
+
+Soal 17
+Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+- Jika di kilk setiap button akan berubah sesuai dengan warna yang sudah saya atur yaitu merah, ungu, biru. Karena ketika salah satu tombol warna pada dialog ditekan, mengubah nilai variabel color sesuai dengan warna yang dipilih, dan kemudian memanggil Navigator.pop untuk menutup dialog dan mengembalikan nilai warna tersebut ke widget yang memanggil dialog. Setelah dialog ditutup, setState dipanggil untuk memicu pembaharuan UI. Inilah alur perubahan warna yang terjadi:
+  - Warna Awal:
+Warna awal pada NavigationDialogScreen adalah biru (Colors.blue.shade700).
+  - Pertanyaan Dialog Ditampilkan:
+Ketika tombol "Change Color" ditekan, _showColorDialog dijalankan.
+Dialog muncul dengan tiga tombol warna (Red, Purple, Blue).
+  - Pilih Warna pada Dialog:
+Jika salah satu tombol warna pada dialog ditekan, variabel color diperbarui sesuai dengan warna yang dipilih.
+Dialog ditutup dengan memanggil Navigator.pop dengan nilai warna sebagai hasilnya.
+  - Pembaruan UI:
+Setelah dialog ditutup, setState dipanggil untuk memicu pembaruan UI pada NavigationDialogScreen.
+Oleh karena itu, warna latar belakang (backgroundColor) diubah sesuai dengan nilai color.
+
+Jadi, perubahan warna yang lihat pada UI adalah hasil dari interaksi dengan dialog dan pengaturan ulang nilai variabel color yang diperoleh dari dialog tersebut. Ini adalah pola yang umum digunakan dalam Flutter untuk memperbarui tampilan berdasarkan perubahan state.
+
+Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
+- Sudah saya ganti warna favorit saya merah, ungu, biru
